@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment_home">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.example.app.Fragment.HomeFragment"
+        android:label="主页"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_fragment_home_self"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_category"
+        android:name="com.example.app.Fragment.CategoryFragment"
+        android:label="类别"
+        tools:layout="@layout/category_fragment" />
+    <fragment
+        android:id="@+id/fragment_order"
+        android:name="com.example.app.Fragment.OrderFragment"
+        android:label="订单"
+        tools:layout="@layout/order_fragment" />
+    <fragment
+        android:id="@+id/fragment_mine"
+        android:name="com.example.app.Fragment.MineFragment"
+        android:label="个人中心"
+        tools:layout="@layout/mine_fragment" />
+    <fragment
+        android:id="@+id/fragment_upload"
+        android:name="com.example.app.Fragment.UploadFragment"
+        android:label="上传"
+        tools:layout="@layout/upload_fragment" />
+
+</navigation>

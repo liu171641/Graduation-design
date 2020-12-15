@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+// 添加插件
+apply plugin: 'com.mob.sdk'
+////手机验证码
+MobSDK {
+    appKey "2fad3544eb4d0"
+    appSecret "e1643517c45430056f5bd2b554699125"
+    SMSSDK {}
+}
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        applicationId "com.example.app"
+        minSdkVersion 17
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //MySQL
+//    compile files('libs/mysql-connector-java-5.1.18-bin.jar')
+
+    //地区选择器
+    compile 'com.bigkoo:pickerview:2.1.1'
+
+    //轮播图
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.daimajia.slider:library:1.1.5@aar'
+    compile 'com.nineoldandroids:library:2.4.0'
+    //一行代码加载网络图片
+    compile 'com.squareup.picasso:picasso:2.5.2'
+//    //Glide
+//    implementation 'com.github.bumptech.glide:glide:3.7.0'
+//    implementation 'com.android.support:support-v4:23.2.1'
+    //android-async-http
+//    compile 'com.loopj.android:android-async-http:1.4.9'
+//    //拍照
+//    implementation 'org.apache.httpcomponents:httpclient-android:4.3.5'
+//    //OkHttp
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    //okhttp-utils
+    compile 'com.zhy:okhttputils:2.6.2'
+}

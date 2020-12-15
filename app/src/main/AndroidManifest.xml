@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.app">
+    <!-- 允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 获取sd卡写的权限，用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许读取手机状态 用于创建BmobInstallation -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_icon"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".BuyUpdateActivity"
+            android:label="更新购买信息"></activity>
+        <activity
+            android:name=".CommodityUpdate"
+            android:label="更新商品信息" />
+        <activity
+            android:name=".SellUpdateActivity"
+            android:label="订单详细信息" />
+        <activity
+            android:name=".UploadSuccessActivity"
+            android:label="已上传的商品" />
+        <activity
+            android:name=".SubmittedActivity"
+            android:label="已提交的代购" />
+        <activity
+            android:name=".PurchasingActivity"
+            android:label="代购" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".ProductDetailsActivity"
+            android:label="商品详情" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".LauncherActivity"
+           >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UpdateUserActivity"
+            android:label="更新个人信息" />
+        <activity
+            android:name=".FindPassActivity"
+            android:label="找回密码" />
+        <activity
+            android:name=".indexActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".RegisterActivity"
+            android:label="注册" />
+    </application>
+
+</manifest>
